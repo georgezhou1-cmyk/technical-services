@@ -22,6 +22,14 @@ python3 sqlite_report_demo.py
 
 [Read the sample code](sqlite_report_demo.py)
 
+### Change the workload
+
+```sh
+python3 sqlite_report_demo.py --rows 50000 --account 12 --limit 10
+```
+
+The fixture is generated in memory. Account IDs range from 0 to 39. Each run prints the SQLite version, both query plans, the median of seven warm reads per plan and the ordered result. The `id DESC` tie-breaker keeps the order stable when multiple records have the same date. The code checks row equivalence before printing timings. Measurements vary with hardware, SQLite version and dataset. The extra index also needs space and must be updated when orders change.
+
 ## Request this service
 
 What should the query return, and roughly how many rows are there? Share a sanitized SELECT, table definitions, or an EXPLAIN QUERY PLAN that is safe to publish. A request opens a public GitHub issue. Use fictional examples and public links. Scope, timing and payment arrangements are confirmed before paid work begins. Technical work is AI-assisted and validated against the agreed examples.
